@@ -8,15 +8,23 @@
     <style>
         body {
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #f9f9f9;
+            overflow: hidden;
+            height: 100vh;
         }
 
-        /* Ensures you can scroll horizontally if Tableau exceeds screen width */
         .tableau-container {
-            overflow-x: auto;
-            overflow-y: hidden;
             width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tableauPlaceholder {
+            width: 100% !important;
+            height: 100% !important;
         }
     </style>
 </head>
@@ -55,9 +63,31 @@
     var divElement = document.getElementById('viz1763585022389');
     var vizElement = divElement.getElementsByTagName('object')[0];
 
-    // Your fixed size
-    vizElement.style.width = '1450px';
-    vizElement.style.height = '727px';
+    // Make visualization responsive to window size
+    function resizeViz() {
+        var containerWidth = divElement.offsetWidth;
+        var containerHeight = window.innerHeight;
+        
+        // Maintain aspect ratio (roughly 2:1 from original 1450x727)
+        var aspectRatio = 1450 / 727;
+        var width = Math.min(containerWidth * 0.95, containerWidth);
+        var height = width / aspectRatio;
+        
+        // If height exceeds viewport, scale down
+        if (height > containerHeight * 0.9) {
+            height = containerHeight * 0.9;
+            width = height * aspectRatio;
+        }
+        
+        vizElement.style.width = width + 'px';
+        vizElement.style.height = height + 'px';
+    }
+    
+    // Initial resize
+    resizeViz();
+    
+    // Resize on window resize
+    window.addEventListener('resize', resizeViz);
 
     var scriptElement = document.createElement('script');
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
