@@ -1,34 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualization 2 - Placeholder</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visualization 2</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 400px;
             margin: 0;
             padding: 20px;
             background-color: #f9f9f9;
         }
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            background: #fff;
+            padding: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            border-radius: 6px;
+        }
         .placeholder {
             text-align: center;
             color: #666;
+            margin: 0 0 16px 0;
         }
-        .placeholder h2 {
-            color: #333;
-            margin-bottom: 10px;
+        /* Make the viz responsive */
+        .tableauVizWrapper {
+            width: 100%;
+            height: 700px; /* change as needed */
         }
-        .placeholder p {
-            font-style: italic;
+        @media (max-width: 640px) {
+            .tableauVizWrapper {
+                height: 520px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class='tableauPlaceholder' id='viz1763532230439' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RF&#47;RFS4TJNWX&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;RFS4TJNWX' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;RF&#47;RFS4TJNWX&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1763532230439');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='1127px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+    <div class="container">
+        <div class="placeholder">
+            <h2>Visualization 2</h2>
+            <p>If you still see a blank area, follow the troubleshooting tips below.</p>
+        </div>
+
+        <!-- Tableau embed START
+             Replace WORKBOOK_NAME/DASHBOARD_NAME below with the values from Tableau Public "Share" -> "Embed Code",
+             OR paste the exact embed snippet Tableau gives you (it will use the same viz_v1.js include).
+        -->
+        <div class="tableauVizWrapper" id="tableauViz">
+            <object class="tableauViz" width="100%" height="100%" style="display:block;">
+                <param name="host_url" value="https://public.tableau.com/" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <!-- Change the name param to your workbook/view path, e.g. "MyWorkbook/MyDashboard" -->
+                <param name="name" value="WORKBOOK_NAME/DASHBOARD_NAME" />
+                <param name="toolbar" value="yes" />
+                <!-- Change static_image to the static image URL Tableau provides (optional fallback) -->
+                <param name="static_image" value="https://public.tableau.com/static/images/WORKBOOK_NAME/DASHBOARD_NAME.png" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+            </object>
+
+            <noscript>
+                <a href="https://public.tableau.com/views/WORKBOOK_NAME/DASHBOARD_NAME">
+                    <img alt="Dashboard static image"
+                         src="https://public.tableau.com/static/images/WORKBOOK_NAME/DASHBOARD_NAME.png"
+                         style="border: none" />
+                </a>
+            </noscript>
+        </div>
+        <!-- Tableau embed END -->
+
+        <!-- Tableau JavaScript API (required) -->
+        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+    </div>
+
+    <!-- Troubleshooting notes (remove in production if you like):
+         - Use the exact embed snippet from Tableau Public (Share -> Embed) when possible.
+         - Ensure the workbook/view is published and set to allow embedding.
+         - If opening this file locally (file://), some browsers block cross-origin requests; serve via a local web server (python -m http.server).
+         - Check the browser console for errors (network 404 or blocked scripts, CSP, mixed content).
+         - Disable adblockers/privacy extensions while testing; they sometimes block public.tableau.com resources.
+    -->
 </body>
 </html>
