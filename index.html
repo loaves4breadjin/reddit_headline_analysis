@@ -173,16 +173,15 @@
         
         <div class="tabs">
             <button class="tab-button active" onclick="openTab(event, 'home')">Home</button>
-            <button class="tab-button" onclick="openTab(event, 'visual1')">Visual 1</button>
-            <button class="tab-button" onclick="openTab(event, 'visual2')">Visual 2</button>
-            <button class="tab-button" onclick="openTab(event, 'visual3')">Visual 3</button>
-            <button class="tab-button" onclick="openTab(event, 'visual4')">Visual 4</button>
-            <button class="tab-button" onclick="openTab(event, 'visual5')">Visual 5</button>
+            <button class="tab-button" onclick="openTab(event, 'visual1')">Data Comparison</button>
+            <button class="tab-button" onclick="openTab(event, 'visual2')">Emotions Over Time</button>
+            <button class="tab-button" onclick="openTab(event, 'visual3')">Difference</button>
+            <button class="tab-button" onclick="openTab(event, 'visual4')">Topics</button>
+            <button class="tab-button" onclick="openTab(event, 'visual5')">Language</button>
         </div>
 
         <div id="home" class="tab-content active">
-            <div class="content-section">
-                <h2>Reddit + Headline Analysis</h2>
+            <div class="content-section" style="text-align: center;">
                 <p>This project analyzes and compares headlines and reddit comments on the topics of immigration, climate change, and healthcare.</p>
                 <p>Navigate through the tabs above to explore different visualizations of the data.</p>
             </div>
@@ -207,7 +206,6 @@
 
         <div id="visual3" class="tab-content">
             <div class="content-section">
-                <h2>Visualization 3</h2>
                 <div class="visualization-container" id="vis3-container">
                     <iframe src="visuals/visual3.html" onload="handleIframeLoad(this)" onerror="handleIframeError(this)"></iframe>
                 </div>
