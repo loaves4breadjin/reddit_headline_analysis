@@ -8,14 +8,26 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
         }
-        /* Full width responsive container with fixed aspect ratio */
-        .tableauPlaceholder {
+    
+        /* This is the container that was collapsing */
+        .tableau-container {
             width: 100%;
-            height: 80vh; /* fills most of the screen */
+            min-height: 900px; /* make the container TALL */
+            height: auto;
             position: relative;
         }
+    
+        /* Make the placeholder fill the container */
+        .tableauPlaceholder {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    
+        /* Make the Tableau object fill the placeholder */
         .tableauPlaceholder object {
             width: 100%;
             height: 100%;
@@ -57,3 +69,4 @@
     </script>
 </body>
 </html>
+
