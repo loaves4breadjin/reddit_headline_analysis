@@ -3,27 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualization 3</title>
+    <title>Visual 3</title>
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: #f9f9f9;
-            box-sizing: border-box;
-            overflow-x: hidden;
         }
-        
+        /* Ensures you can scroll horizontally if Tableau exceeds screen width */
         .tableau-container {
+            overflow-x: auto;
+            overflow-y: hidden;
             width: 100%;
-            max-width: 100%;
-            overflow: hidden;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-        
-        .tableauPlaceholder {
-            width: 100%;
-            position: relative;
         }
     </style>
 </head>
@@ -76,4 +67,3 @@
     </script>
 </body>
 </html>
-
