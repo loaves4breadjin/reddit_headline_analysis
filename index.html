@@ -135,14 +135,13 @@
         
         #vis4-container {
             width: 100%;
-            margin-left: 0 !important;
-            height: auto;
-            min-height: 600px;
+            margin: 0;
         }
         
         #vis4-container iframe {
             width: 100%;
             height: 600px;
+            display: block;
         }
         
         #vis5-container {
@@ -216,7 +215,7 @@
             <div class="content-section">
                 <h2>BERTopic: How Original Topics Fragment into Subtopics (2015-2024)</h2>
                 <div class="visualization-container" id="vis4-container">
-                    <iframe src="visuals/visual4.html" onload="handleIframeLoad(this)" onerror="handleIframeError(this)"></iframe>
+                    <iframe src="visuals/visual4.html" style="width: 100%; height: 600px; border: none;"></iframe>
                 </div>
             </div>
         </div>
